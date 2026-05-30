@@ -1,4 +1,4 @@
-# Smart Inverter Monitoring HMI using ESP32-S3
+# Embedded HMI for Smart Energy Management using ESP32-S3
 
 ## Overview
 
@@ -7,12 +7,13 @@ This project implements a Human Machine Interface (HMI) using an ESP32-S3 displa
 The system receives data from various subsystems through CAN Bus and RS485 communication interfaces and displays the information on an 800×480 touch screen using LVGL.
 
 ### Monitored Systems
+
 - Smart Inverter
 - AC Controller
 - DC Controller
 - CCU (Central Control Unit)
 - Battery System
-- EV Charging Parameters
+- EV Charging System
 
 ---
 
@@ -21,13 +22,13 @@ The system receives data from various subsystems through CAN Bus and RS485 commu
 - Real-time parameter monitoring
 - 800×480 TFT touch display
 - LVGL-based graphical user interface
-- CAN Bus communication (ESP32 TWAI)
+- CAN Bus communication using ESP32 TWAI
 - RS485 communication support
 - Multi-screen dashboard navigation
-- Battery status monitoring
-- Inverter performance monitoring
+- Battery monitoring
+- Inverter monitoring
 - AC/DC controller monitoring
-- EV system monitoring
+- EV charging system monitoring
 - Touch-enabled interface
 
 ---
@@ -35,7 +36,7 @@ The system receives data from various subsystems through CAN Bus and RS485 commu
 ## Hardware Used
 
 - ESP32-S3 Display Module
-- 800×480 TFT Display
+- 800×480 TFT Touch Display
 - Capacitive Touch Panel
 - CAN Transceiver
 - RS485 Transceiver
@@ -49,18 +50,12 @@ The system receives data from various subsystems through CAN Bus and RS485 commu
 ## Software Stack
 
 - Arduino Framework
-- ESP32-S3
+- C/C++
 - LVGL
-- ESP32 TWAI CAN
+- ESP32 TWAI (CAN)
 - SPI
 - I2C (Wire)
-- SquareLine Studio UI
-
----
-
-## Communication Architecture
-
-Smart Inverter / Controllers → CAN Bus / RS485 → ESP32-S3 → LVGL Display
+- SquareLine Studio
 
 ---
 
@@ -98,10 +93,10 @@ Smart Inverter / Controllers → CAN Bus / RS485 → ESP32-S3 → LVGL Display
 - Energy Delivered
 
 ### CCU Screen
-- System Overview
 - Communication Status
 - Controller Status
-- Fault Information
+- System Overview
+- Fault Monitoring
 
 ---
 
@@ -109,44 +104,30 @@ Smart Inverter / Controllers → CAN Bus / RS485 → ESP32-S3 → LVGL Display
 
 1. ESP32-S3 initializes the display and touch interface.
 2. LVGL loads the graphical user interface.
-3. CAN Bus receives real-time data from inverter and controllers.
+3. CAN Bus receives real-time data from the inverter and controllers.
 4. RS485 communication exchanges system information.
 5. Data is processed by the ESP32-S3.
-6. Display values are updated periodically.
-7. Users navigate between screens using touch controls.
-
----
-
-## Future Improvements
-
-- MQTT cloud connectivity
-- Data logging to SD card
-- OTA firmware updates
-- Remote diagnostics
-- Alarm and fault history
-- Modbus RTU support
+6. The display is updated with live system parameters.
+7. Users navigate between screens using the touch interface.
 
 ---
 
 ## Applications
 
+- Smart Energy Management Systems
 - Solar Power Plants
-- Smart Inverters
 - EV Charging Stations
 - Battery Energy Storage Systems (BESS)
 - Industrial Automation
-- Energy Monitoring Systems
+- Real-Time Monitoring Systems
 
 ---
 
-## Author
+## Future Improvements
 
-**Nupur Acharya**
-
-Embedded Systems | ESP32 | CAN | RS485 | LVGL | Linux | C Programming
-
----
-
-## License
-
-MIT License
+- MQTT Cloud Connectivity
+- Data Logging to SD Card
+- OTA Firmware Updates
+- Remote Diagnostics
+- Alarm and Fault History
+- Modbus RTU Support
